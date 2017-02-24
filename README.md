@@ -7,7 +7,8 @@ Get started with this sample, which is an online store that consists of three mi
  
 ####YS1:DEV (staging)
  
-[![Create Toolchain](https://dev-console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
+[![Create Toolchain](https://dev-console.stage1.ng.bluemix.net/devops/graphics/create_toolchain_button.png)]
+(https://dev-console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
  
 ####YS1:INT (staging)
   
