@@ -43,12 +43,9 @@ template:
 toolchain:
   template:
     getting_started: >-
-      Welcome to your microservices toolchain using IBM Continuous Delivery
-      tools (source control, editing, CI/CD, analytics) and some 3rd party tools
-      (testing, notifying and alerting) for building, testing and deploying a
-      3-microservices app.
-
-       You can also use this [tutorial](https://ibm.ent.box.com/notes/122573221923) to see it in action.
+      **Quick start:** View your pipelines, manage access to the toolchain, and continue to develop your microservices. 
+      
+      For step-by-step instructions, see [tutorial](https://ibm.ent.box.com/notes/122573221923).
   name: 'microservices-toolchain-{{timestamp}}'
 services:
   orders-api-build:
