@@ -12,7 +12,7 @@ required:
 
 toolchain:
   template:
-     getting_started: "This is a placeholder for the scenario getting started message."
+     getting_started: "Welcome to your microservices toolchain using IBM Continuous Delivery tools (source control, editing, CI/CD, analytics) and some 3rd party tools (testing, notifying and alerting) for building, testing and deploying a 3-microservices app.\n\n You can also use this [tutorial](https://ibm.ent.box.com/notes/122573221923) to see it in action."
 
 # Github repos
 catalog-api-repo:
