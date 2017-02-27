@@ -1,6 +1,6 @@
 [
   {
-    "name":"PROD Deployment Checks",
+    "name":"PRODUCTION Deployment Checks",
     "description": "Composite Policy to check Unit Tests, Functional Tests, and Code Coverage.",
     "rules":[
       {
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "name":"PROD Deployment Checks (func test only)",
+    "name":"PRODUCTION Deployment Checks (func test only)",
     "description": "Composite Policy to check Functional Tests.",
     "rules":[
       {
