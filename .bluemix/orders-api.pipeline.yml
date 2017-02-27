@@ -63,14 +63,17 @@ stages:
       application: ${CF_APP_NAME}
     script: |-
       #!/bin/bash
-      cf service myMicroservicesCloudant | grep "Plan: Shared"
-      if [ $? -ne 0 ]; then
+      cf services | grep "myMicroservicesCloudant .*Shared" >> null
+      if [ $? -eq 0 ]; then
+        echo "Attempting to delete deprecated service (myMicroservicesCloudant with Shared plan). "
+        echo "This can fail if the service is still bound to applications. If so, please delete these applications explicitly first."
         cf delete-service myMicroservicesCloudant -f
       fi
       cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
       cf push "${CF_APP_NAME}"
+      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')      
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
   - name: Sauce Labs Tests
@@ -158,8 +161,10 @@ stages:
       application: ${CF_APP_NAME}
     script: |-
       #!/bin/bash
-      cf service myMicroservicesCloudant | grep "Plan: Shared"
-      if [ $? -ne 0 ]; then
+      cf services | grep "myMicroservicesCloudant .*Shared" >> null
+      if [ $? -eq 0 ]; then
+        echo "Attempting to delete deprecated service (myMicroservicesCloudant with Shared plan). "
+        echo "This can fail if the service is still bound to applications. If so, please delete these applications explicitly first."
         cf delete-service myMicroservicesCloudant -f
       fi
       cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
