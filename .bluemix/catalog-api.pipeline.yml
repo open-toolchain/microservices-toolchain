@@ -74,13 +74,13 @@ stages:
   - name: Staging Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Store Unit Test and Code Coverage Checks
+    CRITERIA: STAGING Deployment Checks
   - name: Deploy
     type: deployer
     target:
-      region_id: ${QA_REGION_ID}
-      organization: ${QA_ORG_NAME}
-      space: ${QA_SPACE_NAME}
+      region_id: ${STAGING_REGION_ID}
+      organization: ${STAGING_ORG_NAME}
+      space: ${STAGING_SPACE_NAME}
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
@@ -96,9 +96,9 @@ stages:
     services:
       - ${SAUCE_LABS}
     target:
-      region_id: ${QA_REGION_ID}
-      organization: ${QA_ORG_NAME}
-      space: ${QA_SPACE_NAME}
+      region_id: ${STAGING_REGION_ID}
+      organization: ${STAGING_ORG_NAME}
+      space: ${STAGING_SPACE_NAME}
     DL_ASSETS: 'false'
     SELECT_CMD: custom
     COMMAND: |-
@@ -153,7 +153,7 @@ stages:
     value: ${CF_APP_NAME}
     type: text
   - name: LOGICAL_ENV_NAME
-    value: PRODUCTION
+    value: PROD
     type: text
   - name: BUILD_PREFIX
     value: master
@@ -162,7 +162,7 @@ stages:
   - name: Prod Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Store Unit Test, Functional Tests, and Code Coverage Checks
+    CRITERIA: PROD Deployment Checks
   - name: Blue/Green Deploy
     type: deployer
     target:
