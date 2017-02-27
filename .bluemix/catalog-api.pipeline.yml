@@ -84,9 +84,9 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
-      cf services | grep "myMicroservicesCloudant.*Shared" >> null
-      if [ $? -eq 0 ]; then
-        echo "Attempting to delete deprecated service (myMicroservicesCloudant:Shared). "
+      PLAN=$(cf services | grep myMicroservicesCloudant | awk '{print $3}')
+      if [ $PLAN == "Shared" ]; then
+        echo "Attempting to delete deprecated service (myMicroservicesCloudant:$PLAN). "
         echo "This can fail if the service is still bound to applications."
         echo "If so, please delete these applications explicitly first."
         cf delete-service myMicroservicesCloudant -f
@@ -180,9 +180,9 @@ stages:
       application: ${CF_APP_NAME}
     script: |-
       #!/bin/bash
-      cf services | grep "myMicroservicesCloudant.*Shared" >> null
-      if [ $? -eq 0 ]; then
-        echo "Attempting to delete deprecated service (myMicroservicesCloudant:Shared). "
+      PLAN=$(cf services | grep myMicroservicesCloudant | awk '{print $3}')
+      if [ $PLAN == "Shared" ]; then
+        echo "Attempting to delete deprecated service (myMicroservicesCloudant:$PLAN). "
         echo "This can fail if the service is still bound to applications."
         echo "If so, please delete these applications explicitly first."
         cf delete-service myMicroservicesCloudant -f
