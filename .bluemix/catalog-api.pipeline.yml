@@ -84,9 +84,13 @@ stages:
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
+      cf service myMicroservicesCloudant | grep "Plan: Shared"
+      if [ $? -ne 0 ]; then
+        cf delete-service myMicroservicesCloudant -f
+      fi
       cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       # Push app
-      export CF_APP_NAME="test-$CF_APP"
+      export CF_APP_NAME="staging-$CF_APP"
       cf push "${CF_APP_NAME}"
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
@@ -172,6 +176,10 @@ stages:
       application: ${CF_APP_NAME}
     script: |-
       #!/bin/bash
+      cf service myMicroservicesCloudant | grep "Plan: Shared"
+      if [ $? -ne 0 ]; then
+        cf delete-service myMicroservicesCloudant -f
+      fi
       cf create-service cloudantNoSQLDB Lite myMicroservicesCloudant
       if ! cf app $CF_APP; then  
         cf push $CF_APP
