@@ -1,16 +1,18 @@
-# Microservices toolchain 2.0
+# Microservices toolchain with DevOps Insights (v2)
+
+### Continuously deliver a microservices app with GitHub
 
 Get started with this sample, which is an online store that consists of three microservices: a Catalog API, an Orders API, and a UI that calls both of the APIs. The sample includes a DevOps toolchain that is preconfigured for continuous delivery, source control, blue-green deployment, functional testing, issue tracking, online editing, and messaging. 
 
-###To get started, click this button:
+### To get started, click this button:
 [![Create Toolchain](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/open-toolchain/microservices-toolchain)
  
-####YS1:DEV (staging)
+#### YS1:DEV (staging)
  
 [![Create Toolchain](https://dev-console.stage1.ng.bluemix.net/devops/graphics/create_toolchain_button.png)]
 (https://dev-console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
  
-####YS1:INT (staging)
+#### YS1:INT (staging)
   
 [![Create Toolchain](https://console.stage1.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
 
