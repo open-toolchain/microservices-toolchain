@@ -7,17 +7,8 @@ Get started with this sample, which is an online store that consists of three mi
 ### To get started, click this button:
 [![Create Toolchain](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/open-toolchain/microservices-toolchain)
  
-#### YS1:DEV (staging)
- 
-[![Create Toolchain](https://dev-console.stage1.ng.bluemix.net/devops/graphics/create_toolchain_button.png)]
-(https://dev-console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
- 
-#### YS1:INT (staging)
-  
-[![Create Toolchain](https://console.stage1.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.stage1.ng.bluemix.net/devops/setup/deploy?repository=https://github.com/open-toolchain/microservices-toolchain)
-
 ---
-###Learn more
+### Learn more
 
 * [Step by step tutorial](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_microservices_cd)
 * [Getting started](https://bluemix.net/devops)
